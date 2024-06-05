@@ -12,7 +12,7 @@ public class MemberVO implements java.io.Serializable{
 	private Date memBirthday;
 	private String memAccount;
 	private String memPassword;
-	private Byte[] memImg;
+	private byte[] memImg;
 	private Byte memStatus;
 	
 	public Integer getMemNo() {
@@ -69,10 +69,10 @@ public class MemberVO implements java.io.Serializable{
 	public void setMemPassword(String memPassword) {
 		this.memPassword = memPassword;
 	}
-	public Byte[] getMemImg() {
+	public byte[] getMemImg() {
 		return memImg;
 	}
-	public void setMemImg(Byte[] memImg) {
+	public void setMemImg(byte[] memImg) {
 		this.memImg = memImg;
 	}
 	public Byte getMemStatus() {
