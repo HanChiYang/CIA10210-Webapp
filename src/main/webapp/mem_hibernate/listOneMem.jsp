@@ -52,8 +52,8 @@
 <h4>此頁暫練習採用 Script 的寫法取值:</h4>
 <table id="table-1">
 	<tr><td>
-		 <h3>員工資料 - listOneMem.jsp</h3>
-		 <h4><a href="select_page_img.jsp"><img src="images/back1.gif" width="100" height="32" border="0">回首頁</a></h4>
+		 <h3>會員資料 - listOneMem.jsp</h3>
+		 <h4><a href="select_page.jsp"><img src="images/back1.gif" width="100" height="32" border="0">回首頁</a></h4>
 	</td></tr>
 </table>
 
@@ -73,7 +73,7 @@
 
 	</tr>
 	<tr>
-		<td><img src="DBGifReader4?memNo=<%=memberVO.getMemNo()%>" width="100" height="auto"></td>
+		<td><img src="${pageContext.request.contextPath}/DBGifReader?memNo=<%=memberVO.getMemNo()%>" width="100" height="auto"></td>
 		<td><%=memberVO.getMemNo()%></td>
 		<td><%=memberVO.getMemName()%></td>
 		<td><%= memberVO.getMemSex().equals("m") ? "男" : "女" %></td>

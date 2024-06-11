@@ -21,13 +21,31 @@
 		<servlet-name>MemberServletImg</servlet-name>
 		<url-pattern>/mem/memimg.do</url-pattern>
 	</servlet-mapping>
-
+	
 	<servlet>
-		<servlet-name>DBGifReader4</servlet-name>
-		<servlet-class>com.mem.model.DBGifReader4</servlet-class>
+		<servlet-name>MemberServletHibernate</servlet-name>
+		<servlet-class>com.mem.controller.MemberServletHibernate</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>DBGifReader4</servlet-name>
-		<url-pattern>/mem/DBGifReader4</url-pattern>
+		<servlet-name>MemberServletHibernate</servlet-name>
+		<url-pattern>/mem_hibernate/mem.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>NotificationServlet</servlet-name>
+		<servlet-class>com.noti.controller.NotificationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NotificationServlet</servlet-name>
+		<url-pattern>/noti/noti.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DBGifReader</servlet-name>
+		<servlet-class>com.util.DBGifReader</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DBGifReader</servlet-name>
+		<url-pattern>/DBGifReader</url-pattern>
 	</servlet-mapping>
 </web-app>

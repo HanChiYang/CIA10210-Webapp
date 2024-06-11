@@ -1,4 +1,4 @@
-package com.mem.controller;
+package com.noti.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +18,7 @@ import com.mem.model.MemberVO;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 5 * 1024 * 1024
 				, maxRequestSize = 5 * 5 * 1024 * 1024)
-public class MemberServletImg extends HttpServlet {
+public class NotificationServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
@@ -289,6 +289,9 @@ req.setAttribute("memberVO", memberVO); // 含有輸入格式錯誤的empVO物�
 							if (memPassword == null || memPassword.trim().length() == 0) {
 								errorMsgs.add("密碼請勿空白");
 							}
+//			Byte memStatus = Byte.valueOf(req.getParameter("memStatus").trim());
+			
+			
 
 			MemberVO memberVO = new MemberVO();
 			memberVO.setMemName(memName);
@@ -357,5 +360,25 @@ MemberServiceImg memSvc = new MemberServiceImg();
 				RequestDispatcher successView = req.getRequestDispatcher(url);// 刪除成功後,轉交回送出刪除的來源網頁
 				successView.forward(req, res);
 		}
+		
+//		if ("getAll".equals(action) {
+//			
+//		}
+//		private String getAllEmps(HttpServletRequest req, HttpServletResponse res) {
+//			String page = req.getParameter("page");
+//			int currentPage = (page == null) ? 1 : Integer.parseInt(page);
+//			
+//			List<Emp> empList = empService.getAllEmps(currentPage);
+//
+//			if (req.getSession().getAttribute("empPageQty") == null) {
+//				int empPageQty = empService.getPageTotal();
+//				req.getSession().setAttribute("empPageQty", empPageQty);
+//			}
+//			
+//			req.setAttribute("empList", empList);
+//			req.setAttribute("currentPage", currentPage);
+//			
+//			return "/emp/listAllEmps.jsp";
+//		}
 	}
 }

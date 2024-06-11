@@ -9,6 +9,7 @@ public interface MemberDAO_interface {
           public void delete(Integer memNo);
           public MemberVO findByPrimaryKey(Integer memNo);
           public List<MemberVO> getAll();
+          public List<MemberVO> findBySearching(String input);
           //萬用複合查詢(傳入參數型態Map)(回傳 List)
 //        public List<EmpVO> getAll(Map<String, String[]> map); 
 }

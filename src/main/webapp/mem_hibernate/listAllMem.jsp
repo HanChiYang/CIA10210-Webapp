@@ -5,15 +5,15 @@
 <%-- 此頁練習採用 EL 的寫法取值 --%>
 
 <%
-    MemberServiceImg memSvc = new MemberServiceImg();
+    MemberServiceHibernate memSvc = new MemberServiceHibernate();
     List<MemberVO> list = memSvc.getAll();
-    pageContext.setAttribute("list",list);
+    pageContext.setAttribute("list", list);
 %>
 
 
 <html>
 <head>
-<title>所有會員資料 - listAllMem.jsp</title>
+<title>所有會員資料</title>
 
 <style>
   table#table-1 {
@@ -60,7 +60,7 @@
 <table id="table-1">
 	<tr><td>
 		 <h3>所有會員資料 - listAllMem.jsp</h3>
-		 <h4><a href="noti_select_page.jsp"><img src="images/back1.gif" width="100" height="32" border="0">回首頁</a></h4>
+		 <h4><a href="select_page.jsp"><img src="images/back1.gif" width="100" height="32" border="0">回首頁</a></h4>
 	</td></tr>
 </table>
 
@@ -85,7 +85,7 @@
 		
 		<tr>
 			
-			<td><img src="DBGifReader4?memNo=${memberVO.memNo}" width="100" height="auto"></td>
+			<td><img src="${pageContext.request.contextPath}/DBGifReader?memNo=${memberVO.memNo}" width="100" height="auto"></td>
 			<td>${memberVO.memNo}</td>
 			<td>${memberVO.memName}</td>
 			<td>${memberVO.memSex == 'f' ? '女' : '男'}</td>
@@ -97,13 +97,13 @@
 			<td>${memberVO.memPassword}</td>
 			<td>${memberVO.memStatus == '0' ? '停權' : '正常'}</td>
 			<td>
-			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/mem/memimg.do" style="margin-bottom: 0px;">
+			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/mem_hibernate/mem.do" style="margin-bottom: 0px;">
 			     <input type="submit" value="修改">
 			     <input type="hidden" name="memNo"  value="${memberVO.memNo}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
 			<td>
-			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/mem/memimg.do" style="margin-bottom: 0px;">
+			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/mem_hibernate/mem.do" style="margin-bottom: 0px;">
 			     <input type="submit" value="刪除">
 			     <input type="hidden" name="memNo"  value="${memberVO.memNo}">
 			     <input type="hidden" name="action" value="delete"></FORM>

@@ -351,4 +351,11 @@ public class MemberJNDIDAOImg implements MemberDAO_interface {
 		}
 
 
+		@Override
+		public List<MemberVO> findBySearching(String input) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+
 }
